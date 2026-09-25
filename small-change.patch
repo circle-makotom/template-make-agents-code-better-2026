@@ -1,0 +1,26 @@
+diff --git a/src/services/SerialNumber.ts b/src/services/SerialNumber.ts
+index 579c44a..19be617 100644
+--- a/src/services/SerialNumber.ts
++++ b/src/services/SerialNumber.ts
+@@ -7,16 +7,15 @@ class SerialNumber {
+     }
+ 
+     public getNewSerialNumber(user: string = ''): number {
+-        const serial = this.curSerial;
+-
+-        this.users.push({
+-            serial,
++        const newUser = {
++            serial: this.curSerial,
+             user
+-        });
++        };
+ 
++        this.users.push(newUser);
+         this.curSerial += 1;
+ 
+-        return serial;
++        return newUser.serial;
+     }
+ }
+ 
